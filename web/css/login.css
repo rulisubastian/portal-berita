@@ -1,0 +1,55 @@
+/* Container */
+.login-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Left panel */
+.login-left {
+    flex: 1;
+    background: #2563eb; /* biru (tailwind blue-600) */
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Right panel */
+.login-right {
+    flex: 1;
+    background: #ffffff;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* Login box */
+.login-box {
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Form fields */
+.login-form input.form-control {
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+}
+
+/* Buttons */
+.btn-primary {
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-outline-danger {
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Links */
+.login-right a {
+    text-decoration: none;
+}
+.login-right a:hover {
+    text-decoration: underline;
+}

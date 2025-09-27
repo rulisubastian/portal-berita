@@ -1,0 +1,43 @@
+/* wrapper */
+.wrapper-pgn { text-align:center; }
+
+/* container pagination — must be horizontal scrollable */
+.pages {
+  display: flex;
+  gap: 14px;
+  background: #fff;
+  padding: 8px 18px;
+  border-radius: 50px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  overflow-x: auto;                 /* <-- penting */
+  -webkit-overflow-scrolling: touch; /* smooth touch on iOS */
+  scroll-behavior: smooth;
+  white-space: nowrap;               /* jaga elemen tetap dalam satu baris */
+}
+
+/* each page button */
+.pages .page {
+  flex: 0 0 auto;       /* jangan mengecil; tetap di satu baris */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* hover / active */
+.pages .page:hover { background: #f3f4f6; color: #111827; }
+.pages .page.active { background: #1d4ed8; color: #fff; }
+
+/* optionally hide native scrollbar (light) */
+.pages::-webkit-scrollbar { height: 8px; }
+.pages::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 8px; }

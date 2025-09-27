@@ -3,6 +3,7 @@ namespace app\controllers;
 
 use Yii;
 use yii\web\Controller;
+use yii\data\ArrayDataProvider;
 
 class NewsController extends Controller
 {
@@ -14,9 +15,17 @@ class NewsController extends Controller
 
         $topNews = Yii::$app->newsApi->getTopHeadlines('us', $category);
         
+        $dataProvider = new ArrayDataProvider([
+            'allModels' => array_slice($topNews, 5), // sisanya setelah berita utama + top picks
+            'pagination' => [
+                'pageSize' => 6, // tampil 10 berita per halaman
+            ],
+        ]);
+
         return $this->render('index', [
             'topNews' => $topNews,
-            'category' => $category
+            'category' => $category,
+            'dataProvider' => $dataProvider
         ]);
     }
 
